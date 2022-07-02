@@ -1,0 +1,17 @@
+@import "../node_modules/nord/src/sass/nord.scss";
+
+$main-fonts: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+$code-fonts: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+
+body {
+  margin: 0;
+  font-family: $main-fonts;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $nord4;
+}
+
+code {
+  font-family: $code-fonts;
+}
