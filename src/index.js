@@ -3,20 +3,33 @@ import ReactDOM from "react-dom";
 import GlobalStyles from "./styles";
 import Pages from "./pages";
 import reportWebVitals from "./reportWebVitals";
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  gql,
+} from "@apollo/client";
 
-// const client = new ApolloClient({
-//   uri: "http://localhost:4000",
-//   cache: new InMemoryCache(),
-// });
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(
-ReactDOM.render(
-  <React.StrictMode>
+const client = new ApolloClient({
+  uri: "http://localhost:4000",
+  cache: new InMemoryCache(),
+});
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(
+  <ApolloProvider client={client}>
     <GlobalStyles />
     <Pages />
-  </React.StrictMode>,
-  document.getElementById("root")
+  </ApolloProvider>
 );
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <GlobalStyles />
+//     <Pages />
+//   </React.StrictMode>,
+//   document.getElementById("root")
+// );
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
